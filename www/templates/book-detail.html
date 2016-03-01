@@ -1,0 +1,25 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="{{bookVm.book.name}}">
+  <ion-content class="padding">
+    <div class="list card">
+      <div class="item item-thumbnail-left">
+        <img ng-src="{{bookVm.book.imageLinks.thumbnail}}">
+        <h2>{{bookVm.book.title}}</h2>
+        <p ng-repeat="author in bookVm.book.authors">{{author}}</p>
+      </div>
+    <div class="item item-body">
+      <p>
+        {{bookVm.book.description | limitTo: 400}} {{bookVm.book.description.length > 400 ? '...' : ''}}
+      </p>
+    </div>
+    <div class="item">
+      {{bookVm.book.pageCount}} pages
+    </div>
+  </div>
+  </ion-content>
+</ion-view>

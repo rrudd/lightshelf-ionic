@@ -1,0 +1,14 @@
+<ion-view view-title="Books">
+  <ion-content>
+    <ion-refresher on-refresh="doRefresh()"
+      pulling-text="Pull to refresh...">
+    </ion-refresher>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="book in booklistVm.books" type="item-text-wrap" href="#/app/books/{{book._id}}">
+        <img ng-src="{{book.imageLinks.smallThumbnail}}">
+        <h2>{{book.title}}</h2>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
